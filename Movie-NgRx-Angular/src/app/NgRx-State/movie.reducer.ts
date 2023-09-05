@@ -5,7 +5,7 @@ import { ApiResponse } from "../interface/apiResponse-movie";
 import { Observable } from "rxjs";
 
 
-export const initialState: ApiResponse<Movies> = []
+export const initialState: ApiResponse<Movies>[] = []
 
 export const moviesReducer = createReducer(
     initialState,
