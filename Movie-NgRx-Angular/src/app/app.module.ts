@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeMovieComponent } from './components/home-movie/home-movie.component';
 import { MessagesComponent } from './messages/messages/messages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
 
 
 
@@ -30,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         ModulesToolsModule,
         HttpClientModule,
         BrowserAnimationsModule,
+        StoreModule.forRoot({}, {}),
     ],
     providers: [],
     bootstrap: [AppComponent],
