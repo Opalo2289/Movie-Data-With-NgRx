@@ -1,0 +1,17 @@
+body {
+    background: rgb(6, 12, 22);
+    background: radial-gradient(circle, rgba(6, 12, 22, 1) 72%, rgb(4, 0, 251) 100%);
+}
+
+.black-font {
+    color: white;
+}
+
+body .team {
+    background: rgb(6, 12, 22);
+    background: radial-gradient(circle, rgba(6, 12, 22, 1) 72%, rgb(23, 22, 90) 100%);
+}
+
+.tendencia {
+    color: rgba(4, 0, 251, 0.626);
+}

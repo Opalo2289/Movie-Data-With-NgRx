@@ -1,0 +1,20 @@
+.paginator {
+    background: rgb(6,12,22);
+    background: linear-gradient(90deg, rgba(6,12,22,1) 72%, rgba(91,30,30,1) 100%);
+    color: antiquewhite;
+    font-family:  Raleway, "Helvetica Neue", sans-serif;
+    font-weight: bold;
+}
+
+
+
+.box {
+    background: rgb(6, 12, 22);
+    color: antiquewhite;
+}
+
+.boxFont {
+    color: antiquewhite;
+    font-family:  Raleway, "Helvetica Neue", sans-serif;
+    font-weight: bold;
+}

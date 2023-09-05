@@ -1,0 +1,4 @@
+.fondo-header {
+    background: rgb(6, 12, 22);
+    background: radial-gradient(circle, rgba(6, 12, 22, 1) 72%, rgb(4, 0, 251) 100%);
+}

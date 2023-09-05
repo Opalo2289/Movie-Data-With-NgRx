@@ -1,0 +1,52 @@
+
+<app-header></app-header><br><br>
+
+<body class="font">
+    
+    <main id="main"><br><br>
+
+      <!-- ======= Portfolio Details Section ======= -->
+      <section id="portfolio-details" class="portfolio-details" *ngIf="movie$ | async as Movies">
+        <div class="container">
+  
+          <div class="row gy-4">
+  
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+  
+                  <div class="swiper-slide">
+                    <img src="https://image.tmdb.org/t/p/original/{{Movies.backdrop_path}}" alt="">
+                  </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4">
+              <div class="portfolio-info">
+                <h3>{{Movies.original_title}}</h3>
+                <ul>
+                  <li><strong>Titulo en Español:</strong> {{Movies.title}}</li>
+                  <li><strong>Año de estreno:</strong> {{Movies.release_date}}</li>
+                </ul>
+              </div>
+              <div class="portfolio-description">
+                <h2>Descripción</h2>
+                <p>
+                  {{Movies.overview}}
+                </p>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+        
+      </section><!-- End Portfolio Details Section -->
+    
+    </main>
+    <app-footer></app-footer>
+</body>
+
