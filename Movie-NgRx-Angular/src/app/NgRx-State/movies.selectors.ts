@@ -10,7 +10,6 @@ export const selectMovies = createFeatureSelector<ApiResponse<Movies>>('movies')
 export const selectMoviesCollection = createSelector(
     selectMovies,
     (movies) => {
-      // Ahora, puedes acceder a la propiedad 'results' de 'ApiResponse' dentro de 'movies'.
       return movies.results
     }
   );

@@ -60,7 +60,7 @@ export class SearchMovieComponent implements OnInit {
 
 
   search(term: string): void {
-    console.log('search', term)
+    console.log('termino de busqueda', term)
     this.searchTerms.next(term);
   }
 
