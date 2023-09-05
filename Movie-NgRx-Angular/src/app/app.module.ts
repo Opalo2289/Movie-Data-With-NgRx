@@ -11,6 +11,8 @@ import { HomeMovieComponent } from './components/home-movie/home-movie.component
 import { MessagesComponent } from './messages/messages/messages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
+import { moviesReducer } from './NgRx-State/movie.reducer';
+
 
 
 
@@ -31,7 +33,7 @@ import { StoreModule } from '@ngrx/store';
         ModulesToolsModule,
         HttpClientModule,
         BrowserAnimationsModule,
-        StoreModule.forRoot({}, {}),
+        StoreModule.forRoot({movies: moviesReducer}),
     ],
     providers: [],
     bootstrap: [AppComponent],

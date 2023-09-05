@@ -12,9 +12,9 @@ import {
 
 import { ApiResponse } from 'src/app/interface/apiResponse-movie';
 import { PageEvent } from '@angular/material/paginator';
-
-
-
+import { selectMovies } from 'src/app/NgRx-State/movies.selectors';
+import { Store } from '@ngrx/store';
+import { MoviesApiActions } from 'src/app/NgRx-State/movie.actions';
 
 @Component({
   selector: 'app-search-movie',
@@ -23,7 +23,8 @@ import { PageEvent } from '@angular/material/paginator';
 })
 export class SearchMovieComponent implements OnInit {
 
-  movies$!: Observable<ApiResponse<Movies>>;
+  // movies$!: Observable<ApiResponse<Movies>>;
+  movies$ = this.store.select(selectMovies);
   private searchTerms = new Subject<string>();
   public page: number = 1;
   private term: string = ""
@@ -38,7 +39,7 @@ export class SearchMovieComponent implements OnInit {
 
 
 
-  constructor(private _movieService: MovieService) { };
+  constructor(private _movieService: MovieService,  private store: Store) { };
 
   ngOnInit(): void {
 
@@ -48,7 +49,13 @@ export class SearchMovieComponent implements OnInit {
 
 
   getMovies(page: number): void {
-    this.movies$ = this._movieService.getMovies(page)
+   this._movieService.getMovies(page).subscribe((moviesApiResponse) => {
+
+      const moviesArray: ApiResponse<Movies>[] = [moviesApiResponse];
+
+      this.store.dispatch(MoviesApiActions.retrievedMovieList({movies: moviesArray}));
+
+    })
   };
 
 
